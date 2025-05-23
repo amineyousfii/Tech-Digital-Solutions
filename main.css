@@ -1,0 +1,160 @@
+/* body{
+    margin: 0;
+    font-family: Helvetica, sans-serif;
+}
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+}
+
+.title{
+    text-align: center;
+    font-size: 3em;
+    margin: 1em;
+}
+.faq-section{
+    padding: 4em 2em;
+}
+.faq {
+    list-style: none;
+    max-width: 700px;
+    margin: 0 auto;
+}
+.faq li {
+    background: #fff;
+    border-bottom: 1px #ccc solid;
+}
+.faq li:first-child {
+    border-top: 1px #ccc solid;
+}
+.q {
+    padding: 1em 0;
+    border-left: 10px #fff solid;
+    cursor: pointer;
+}
+.q:hover,
+.q:hover .arrows {
+    border-left-color: #0569ff;
+}
+.arrows{
+    display: inline-block;
+    margin: 0 0.5rem;
+    width: 0;
+    height: 0;
+    border-top: 6px solid transparent;
+    border-left: 10px solid #555;
+    border-bottom: 6px solid transparent;
+    transition: 0.3s;
+}
+
+.faq q{
+    color: #888;
+    line-height: 25px;
+}
+.a {
+    overflow: hidden;
+    height: 0;
+    padding: 0 1em 0 3.3em;
+}
+.a-opened {
+    padding: 1em 1em 2em 3.3em;
+    height: initial;
+}
+.arrows-rotated{
+    transform: rotate(90deg);
+}
+
+
+
+footer {
+    position: relative;
+    z-index: 10;
+    padding:  1rem;
+    width: 100%;
+}
+
+footer .footer {
+    background: #0B192C;
+    border-radius: .7rem;
+    padding: 6rem 7rem;
+    padding-bottom: 1rem;
+}
+
+footer .footer .container {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #fff;
+    gap: 2rem;
+}
+
+footer .footer .container .detail {
+    max-width: 32rem;
+}
+
+footer .footer .container .detail h3 {
+    font-size: 1.5rem;
+    font-weight: 500;
+    margin-bottom: 1rem;
+    color: #fff;
+}
+
+footer .footer .container .detail p {
+    line-height: 1.6;
+    font-size: 0.8rem;
+    color: #fff;
+    margin-bottom: 1.5rem;
+}
+
+footer .footer .container .detail a {
+    color: rgb(255 255 255/80%);
+    font-size: 0.8rem;
+    padding: 1px 0;
+    display: inline-block;
+}
+
+.footer .socials ion-icon{
+    font-size: 1.2rem;
+    color: #000;
+    background: #fff;
+    border-radius: 50%;
+    padding: 1rem;
+    margin: 0.5rem;
+    cursor: pointer;
+}
+.footer .socials .ln ion-icon:hover{
+    background-color: #00cee4;
+}
+.footer .socials .ins ion-icon:hover{
+   background-color: #bb1489;
+}
+.footer .socials .git ion-icon:hover{
+    background-color: #34393b;
+ }
+footer .footer .container h4 {
+    font-size: 1.1rem;
+    font-weight: 500;
+    margin-bottom: .5rem;
+    color: #fff;
+}
+
+footer .footer .container .about a{
+    text-decoration: none;
+    color: #fff;
+}
+
+footer .footer .container li {
+    list-style: none;
+    margin-top: 1rem;
+}
+
+footer .footer .container a {
+    font-size: 0.8rem;
+    color: rgb(255 255 255/80%);
+}
+
+footer .footer .container a:hover {
+    color: #00cee4;
+}
+*/

@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+    <link href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css" rel="stylesheet"/>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <title>Agency Website</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css" integrity="sha512-10/jx2EXwxxWqCLX/hHth/vu2KY3jCF70dCQB8TSgNjbCVAC/8vai53GfMDrO2Emgwccf2pJqxct9ehpzG+MTw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&" />
+</head>
+<body>
+    
+  <div class="preloader">
+    <div class="loader">
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+    </div>
+  </div>
+ 
+    <header class="header">
+         <a href="#" class="logo">
+            <img src="images/hlogo.png" alt="company logo" class="default-logo">
+            <img src="images/alogo.png" alt="company logo white" class="scrolled-logo">
+        </a>
+         
+        <a  class="menu fas fa-bars"></a>
+        <div class="nav-links-container">
+            <ul class="nav-links">
+                <li class="nav-link-item"><a href="#">Home</a></li>
+                <li class="nav-link-item"><a href="#about">About</a></li>
+                <li class="nav-link-item"><a href="#services">Services <i class="fa-solid fa-chevron-down"></i></a>
+                <ul class="dropdown-menu">
+                    <li class="dropdown-menu-item"><a href="pricing.html">Pricing</a></li>
+                </ul>
+                </li>
+                
+                <li class="nav-link-item"><a href="#projects">Projects <i class="fa-solid fa-chevron-down"></i></a>
+                <ul class="dropdown-menu">
+                        <li class="dropdown-menu-item"><a href="FAQ.html">FAQ</a></li>
+                </ul>
+                </li>
+                <li class="nav-link-item"><a href="#contact">Contact Us</a></li>
+                <!-- <button class="nav-link-item"  id="btnLogin-popup">Login</button> -->
+            </ul>
+        </div>
+    </header>
+   
+      
+     <div class="slider-container">
+        <div class="slider-wraper swiper-wrapper" >
+            <div class="slider-item swiper-slide">
+                <div class="slide-content">
+                    <h3 class="slide-subtitle">Slide 01</h3>
+                    <h2 class="slide-title">Empowering Creativity, One Idea at a Time.</h2>
+                    <p class="slide-description">
+                        A dynamic workspace that fosters innovation and collaboration to bring your digital visions to life.
+                    </p>
+                    <a href="#about" class="slide-button"><span>Learn More</span></a>
+                </div>
+            </div>
+            <div class="slider-item swiper-slide">
+                <div class="slide-content">
+                    <h3 class="slide-subtitle">Slide 02</h3>
+                    <h2 class="slide-title"> Collaboration That Drives Success.</h2>
+                    <p class="slide-description">
+                        Bringing together creativity, strategy, and technology to achieve impactful business solutions.
+                    </p>
+                    <a href="#about" class="slide-button"><span>Learn More</span></a>
+                </div>
+            </div>
+            <div class="slider-item swiper-slide">
+                <div class="slide-content">
+                    <h3 class="slide-subtitle">Slide 03</h3>
+                    <h2 class="slide-title">Innovative Solutions for a Digital Future.</h2>
+                    <p class="slide-description">
+                        Cutting-edge technology and tailored strategies designed to help businesses thrive in the digital world.
+                    </p>
+                    <a href="#about" class="slide-button"><span>Learn More</span></a>
+                </div>
+            </div>
+           
+            <div class="slider-controls">
+                <ul class="slider-pagination">
+                    <div class="slider-indicator"></div>
+                  <li class="slider-tab">
+                    Innovation starts with creative minds.
+                  </li>
+                  <li class="slider-tab">
+                    Working together for great results.
+                  </li>
+                  <li class="slider-tab">
+                    Shaping tomorrow with smart tech.
+                  </li>
+                </ul>
+            </div>
+        
+            <div class="slider-navigations">
+                <button id="slide-prev" class="material-symbols-rounded">arrow_left_alt</button>
+                <button id="slide-next" class="material-symbols-rounded"> arrow_right_alt</button>
+            </div>
+        </div>
+     </div> 
+
+
+
+    
+    <section class="about" id="about">
+        <div class="box-container">
+            <div class="box box1">
+                <h1 class="heading">about us</h1>
+                <h3>At Tech Digital Solutions, we offer :<br><span class="auto-inputs"></span></h3>
+                <p>At Tech Digital Solutions, I specialize in delivering affordable and comprehensive digital services that empower startups and small businesses to grow and thrive. With expertise in web development, graphic design, and digital marketing, I provide customized solutions that align with each client's unique goals.</p>
+                <p>My mission is to simplify the digital journey by offering all-in-one services that save time, reduce costs, and drive measurable results. Whether you're launching a new brand or scaling your business, I am committed to turning your ideas into impactful, lasting success.</p>
+            </div>
+
+            <div class="box box2">
+                <div class="image">
+                    <img src="images/modern-agency.jpg" alt="">
+                </div>
+            </div>
+        </div>
+    </section>
+      
+   
+    <section class="services" id="services">
+        <h1 class="heading">our services</h1>
+        <div class="box-container">
+            <div class="box box1">
+                <img src="images/branding.svg" alt="branding for businesses">
+                <h3>branding</h3>
+                <p> I craft unique brand identities that reflect your business values and resonate with your target audience, ensuring a lasting impression.</p>
+            </div>
+
+            <div class="box box2">
+                <img src="images/graph.svg" alt="graphic design">
+                <h3>design</h3>
+                <p>Visually stunning and user-centric designs that bring your ideas to life, enhancing user experience and brand engagement.</p>
+            </div>
+
+            <div class="box box3">
+                <img src="images/dev.svg" alt="web development">
+                <h3>development</h3>
+                <p>Custom, responsive websites and applications built for performance, scalability, and seamless user interaction.</p>
+            </div>
+
+            <div class="box box4">
+                <img src="images/strategy.svg" alt="business strategy">
+                <h3>strategy</h3>
+                <p>Tailored digital strategies designed to align with your goals, streamline operations, and maximize impact.</p>
+            </div>
+
+            <div class="box box5">
+                <img src="images/support.svg" alt="support to small businesses">
+                <h3>support</h3>
+                <p>Reliable ongoing support and maintenance to keep your digital platforms running smoothly and efficiently.</p>
+            </div>
+
+            <div class="box box6">
+                <img src="images/marketing.svg" alt="digital marketing for startups">
+                <h3>marketing</h3>
+                <p>Result-driven marketing strategies that increase visibility, engage customers, and drive business growth.</p>
+            </div>
+
+        </div>
+    </section>
+
+    
+    <section class="works" id="projects">
+        <h1 class="heading">our projects</h1>
+        <div class="box-container">
+            <div class="box box1">
+                <div class="image">
+                    <img src="images/travel.webp" alt="">
+                    <div class="content">
+                        <h3><a href="https://amineyousfii.github.io/Travel-Website/">Link</a></h3>
+                    </div>
+                </div>
+            </div>
+            <div class="box box2">
+                <div class="image">
+                    <img src="images/watch.webp" alt="">
+                    <div class="content">
+                        <h3><a href="#">Link</a></h3>
+                    </div>
+                </div>
+            </div>
+            <div class="box box3">
+                <div class="image">
+                    <img src="images/portoflio.webp" alt="">
+                    <div class="content">
+                        <h3><a href="#">Link</a></h3>
+                    </div>
+                </div>
+            </div>
+            <div class="box box4">
+                <div class="image">
+                    <img src="images/restaurant.webp" alt="">
+                    <div class="content">
+                        <h3><a href="#">Link</a></h3>
+                    </div>
+                </div>
+            </div>
+            <div class="box box5">
+                <div class="image">
+                    <img src="images/ecommerce.webp" alt="">
+                    <div class="content">
+                        <h3><a href="#">Link</a></h3>
+                    </div>
+                </div>
+            </div>
+            <div class="box box6">
+                <div class="image">
+                    <img src="images/camping.webp" alt="">
+                    <div class="content">
+                        <h3><a href="#">Link</a></h3>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </section>
+
+   
+
+      <section class="testimonials">
+        <div class="containers">
+            <div class="section-header">
+                <h2 class="title">What our clients say</h2>
+            </div>
+            <div class="testimonials-content">
+                <div class="testimonials-slide">
+                    <div class="testimonials-item">
+                        <div class="info">
+                            <img src="images/img5.webp" alt="">
+                            <div class="text-box">
+                                <h3 class="name">Sarah Martinez</h3>
+                                <span class="job">Local Coffee Shop</span>
+                            </div>
+                        </div>
+                        <p>Managing my website, social media, and marketing across different agencies was overwhelming. Tech Digital Solutions gave me an all-in-one package that simplified everything and saved me money!</p>
+                        <div class="rating">
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                        </div>
+                    </div>
+                    <div class="testimonials-item">
+                        <div class="info">
+                            <img src="images/img6.webp" alt="">
+                            <div class="text-box">
+                                <h3 class="name">Alex Carter</h3>
+                                <span class="job">Startup Founder</span>
+                            </div>
+                        </div>
+                        <p>As a startup, I struggled to find an affordable way to launch my online store. Tech Digital Solutions built a stunning website and helped with branding, making my business look professional from day one!</p>
+                        <div class="rating">
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                        </div>
+                    </div>
+                    <div class="testimonials-item">
+                        <div class="info">
+                            <img src="images/img13.webp" alt="">
+                            <div class="text-box">
+                                <h3 class="name">David Nguyen</h3>
+                                <span class="job">Graphic Designer</span>
+                            </div>
+                        </div>
+                        <p>I wanted a sleek portfolio website to showcase my work, but I lacked the technical skills. Tech Digital Solutions created a website that perfectly reflects my brand and helps me attract clients effortlessly.</p>
+                        <div class="rating">
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                        </div>
+                    </div>
+                    <div class="testimonials-item">
+                        <div class="info">
+                            <img src="images/img2.webp" alt="">
+                            <div class="text-box">
+                                <h3 class="name">Michael Johnson</h3>
+                                <span class="job">Entrepreneur</span>
+                            </div>
+                        </div>
+                        <p>My website was outdated and full of technical issues, but hiring a full-time developer was too expensive. Tech Digital Solutions provided fast, reliable maintenance and support, keeping my site running smoothly!</p>
+                        <div class="rating">
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                        </div>
+                    </div>
+                    <div class="testimonials-item">
+                        <div class="info">
+                            <img src="images/img1.webp" alt="">
+                            <div class="text-box">
+                                <h3 class="name">Lisa Roberts</h3>
+                                <span class="job"> Fitness Coaching Business</span>
+                            </div>
+                        </div>
+                        <p>I knew I needed digital marketing to grow my business, but I didn't know where to start. Tech Digital Solutions provided a customized marketing strategy that boosted my online presence and brought in new clients.</p>
+                        <div class="rating">
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+  
+   
+    <section class="contact" id="contact">
+        <h1 class="heading-contact">contact us</h1>
+        <div class="box-container">
+            <div class="box">
+                <h3>Adress</h3>
+                <p>Lisbon - 1300 - Portugal</p>
+                <h3>Email</h3>
+                <p>Techdigitalsolutions@gmail.com</p>
+                <h3>Phone</h3>
+                <p>+351 517 970 647</p>
+                <h3>Fax</h3>
+                <p>(239) 091 827 322</p>
+            </div>
+
+            <form action="https://api.web3forms.com/submit" method="POST">
+                
+                <div class="inputBox">
+                    <input type="hidden" name="access_key" value="b0a30f04-f720-4fb8-88c4-b3a7aae386d9">
+                    <input type="text"  name="name"  placeholder="your name">
+                    <input type="text" name="email"  placeholder="your email">
+                </div>
+
+                <textarea name="message" placeholder="your message" id="" cols="30" rows="10"></textarea>
+                <input type="submit" value="send message" class="btn" />
+            </form>
+        </div>
+    </section>
+
+
+
+   
+
+<footer>
+    <section class="footer">
+        <div class="containerr">
+            <div class="detail">
+                <h3>Tech Digital Solutions</h3>
+                <p> Tech Digital Solutions delivers innovative and affordable digital services to help businesses grow and succeed.<br>Let's build something great together.</p>
+                <div class="socials">
+                    <a href="#" class="ln"> <ion-icon name="logo-linkedin"></ion-icon></a>
+                    <a href="#" class="ins">  <ion-icon name="logo-instagram"></ion-icon></a>
+                    <a href="#" class="git"><ion-icon name="logo-github"></ion-icon></a> 
+                 </div> 
+            </div>
+            <div class="about-us">
+                <h4>about us</h4>
+                <li><a href="#">about</a></li>
+                <li><a href="#">our term</a></li>
+                <li><a href="#">careers</a></li>
+                <li><a href="#">mission and values</a></li>
+                <li><a href="#">partnerships</a></li>
+            </div>
+            <div class="about-us">
+                <h4>help</h4>
+                <li><a href="#">FAQ</a></li>
+                <li><a href="#">booking guide</a></li>
+                <li><a href="#">cancellation policy</a></li>
+                <li><a href="#">site map</a></li>
+            </div>
+            <div class="about-us">
+                <h4>Resources</h4>
+                <li><a href="#">newsletter</a></li>
+                <li><a href="#">blog</a></li>
+                <li><a href="#">gallery</li>
+                <li><a href="#">offers</a></li>
+            </div>
+        </div>
+    </section>
+</footer>
+
+
+<!-- Chatbot -->
+
+<button id="chatbot-toggler">
+    <span class="material-symbols-rounded">mode_comment</span>
+    <span class="material-symbols-rounded">close</span>
+</button>
+<div class="chatbot-popup">
+    <div class="chat-header">
+        <div class="header-info">
+            <svg class="chatbot-logo" xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 1024 1024">
+                <path d="M738.3 287.6H285.7c-59 0-106.8 47.8-106.8 106.8v303.1c0 59 47.8 106.8 106.8 106.8h81.5v111.1c0 .7.8 1.1 1.4.7l166.9-110.6 41.8-.8h117.4l43.6-.4c59 0 106.8-47.8 106.8-106.8V394.5c0-59-47.8-106.9-106.8-106.9zM351.7 448.2c0-29.5 23.9-53.5 53.5-53.5s53.5 23.9 53.5 53.5-23.9 53.5-53.5 53.5-53.5-23.9-53.5-53.5zm157.9 267.1c-67.8 0-123.8-47.5-132.3-109h264.6c-8.6 61.5-64.5 109-132.3 109zm110-213.7c-29.5 0-53.5-23.9-53.5-53.5s23.9-53.5 53.5-53.5 53.5 23.9 53.5 53.5-23.9 53.5-53.5 53.5zM867.2 644.5V453.1h26.5c19.4 0 35.1 15.7 35.1 35.1v121.1c0 19.4-15.7 35.1-35.1 35.1h-26.5zM95.2 609.4V488.2c0-19.4 15.7-35.1 35.1-35.1h26.5v191.3h-26.5c-19.4 0-35.1-15.7-35.1-35.1zM561.5 149.6c0 23.4-15.6 43.3-36.9 49.7v44.9h-30v-44.9c-21.4-6.5-36.9-26.3-36.9-49.7 0-28.6 23.3-51.9 51.9-51.9s51.9 23.3 51.9 51.9z"></path>
+            </svg> 
+            <h2 class="logo-text">Chatbot</h2>
+        </div>
+        <button id="close-chatbot" class="material-symbols-rounded">
+            keyboard_arrow_down
+            </button>
+    </div>
+
+    <div class="chat-body">
+        <div class="message bot-message">
+            <svg class="bot-avatar" xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 1024 1024">
+                <path d="M738.3 287.6H285.7c-59 0-106.8 47.8-106.8 106.8v303.1c0 59 47.8 106.8 106.8 106.8h81.5v111.1c0 .7.8 1.1 1.4.7l166.9-110.6 41.8-.8h117.4l43.6-.4c59 0 106.8-47.8 106.8-106.8V394.5c0-59-47.8-106.9-106.8-106.9zM351.7 448.2c0-29.5 23.9-53.5 53.5-53.5s53.5 23.9 53.5 53.5-23.9 53.5-53.5 53.5-53.5-23.9-53.5-53.5zm157.9 267.1c-67.8 0-123.8-47.5-132.3-109h264.6c-8.6 61.5-64.5 109-132.3 109zm110-213.7c-29.5 0-53.5-23.9-53.5-53.5s23.9-53.5 53.5-53.5 53.5 23.9 53.5 53.5-23.9 53.5-53.5 53.5zM867.2 644.5V453.1h26.5c19.4 0 35.1 15.7 35.1 35.1v121.1c0 19.4-15.7 35.1-35.1 35.1h-26.5zM95.2 609.4V488.2c0-19.4 15.7-35.1 35.1-35.1h26.5v191.3h-26.5c-19.4 0-35.1-15.7-35.1-35.1zM561.5 149.6c0 23.4-15.6 43.3-36.9 49.7v44.9h-30v-44.9c-21.4-6.5-36.9-26.3-36.9-49.7 0-28.6 23.3-51.9 51.9-51.9s51.9 23.3 51.9 51.9z"></path>
+            </svg> 
+            <div class="message-text">
+                Hey there ! <br/> How can I help you today ?
+            </div>
+        </div>
+        
+        <div class="chat-footer">
+            <form action="#" class="chat-form">
+                <textarea placeholder="Message..." class="message-input" required></textarea>
+                <div class="chat-controls">
+                         <button type="button" id="emoji-picker" class="material-symbols-rounded">sentiment_satisfied</button>
+                         <div class="file-upload-wrapper">
+                            <input type="file" accept="images/*" id="file-input" hidden>
+                            <img src="#">
+                            <button type="button" id="file-upload" class="material-symbols-rounded">attach_file</button>
+                            <button type="button" id="file-cancel" class="material-symbols-rounded">close</button>
+                         </div>
+                         
+                         <button type="submit" id="send-message" class="material-symbols-rounded">arrow_upward</button>
+                </div>
+            </form>
+        </div>
+</div>
+
+   
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/gsap.min.js" integrity="sha512-EZI2cBcGPnmR89wTgVnN3602Yyi7muWo8y1B3a8WmIv1J9tYG+udH4LvmYjLiGp37yHB7FfaPBo8ly178m9g4Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/ScrollTrigger.min.js" integrity="sha512-OzC82YiH3UmMMs6Ydd9f2i7mS+UFL5f977iIoJ6oy07AJT+ePds9QOEtqXztSH29Nzua59fYS36knmMcv79GOg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+     <script src="https://cdn.jsdelivr.net/npm/emoji-mart@latest/dist/browser.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
