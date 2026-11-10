@@ -25,6 +25,28 @@ html{
     overflow-x: hidden;
     scroll-behavior: smooth;
     scroll-padding-top: 6rem;
+    line-height: 1.5;
+}
+
+/* Base rules the home page used to get from Tailwind's reset */
+h1, h2, h3, h4, h5, h6{
+    font-size: inherit;
+    font-weight: inherit;
+}
+img{
+    max-width: 100%;
+}
+a{
+    color: inherit;
+}
+::placeholder{
+    color: #9ca3af;
+}
+
+/* Keyboard focus stays visible despite the global outline reset */
+:focus-visible{
+    outline: 2px solid #4070f4;
+    outline-offset: 2px;
 }
 
 
@@ -38,6 +60,14 @@ html{
     height: 100%;
     background-color: var(--light-bg);
     z-index: 9999;
+    /* Fallback that needs no JavaScript: lift the overlay even if a CDN script stalls before app.js runs */
+    animation: preloader-timeout 0.3s 4s forwards;
+  }
+  @keyframes preloader-timeout {
+    to {
+        opacity: 0;
+        visibility: hidden;
+    }
   }
   .loader {
     position: absolute;
@@ -114,13 +144,26 @@ html{
     height: auto;
     margin-top: 0;
 }
-.header .menu{ 
+.header .menu{
     font-size: 2rem;
     color: var(--white);
-    display: none;  
-} 
+    background: none;
+    cursor: pointer;
+    position: relative;
+    z-index: 1;
+    display: none;
+}
+.header .menu.fa-close{
+    color: var(--black);
+}
 .scrolled-logo {
-    display: none; 
+    display: none;
+}
+.header.active .default-logo{
+    display: none;
+}
+.header.active .scrolled-logo{
+    display: block;
 }
 .nav-links-container {
     padding: 16px 0;
@@ -176,7 +219,8 @@ html{
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
 
-.nav-links > .nav-link-item:hover > .dropdown-menu {
+.nav-links > .nav-link-item:hover > .dropdown-menu,
+.nav-links > .nav-link-item:focus-within > .dropdown-menu {
     transform: translateY(8px);
     visibility: visible;
     opacity: 1;
@@ -198,23 +242,6 @@ html{
     color: #fff;
     background-color: #4070f4;
 }
-
-.header .nav-links-container #btnLogin-popup{
-    width: 140px;
-    height: 50px;
-    border: 2px solid #fff;
-    outline: none;
-    border-radius: 50px;
-    cursor: pointer;
-    font-size: 1.5rem;
-    color: #fff;
-    font-weight: 600;
-    margin-left: 40px;
-    padding: 13px 0;
-    letter-spacing: 1px;
-    background: #4070f4;
-} 
-
 
 section{
     padding: 5rem 9%;
@@ -522,7 +549,8 @@ section{
 .works .box-container .box .image .content h3 a{
     color: #fff;
 }
-.works .box-container .box:hover .image .content{
+.works .box-container .box:hover .image .content,
+.works .box-container .box:focus-within .image .content{
     transform: translateY(0);
 }
 
@@ -537,7 +565,7 @@ section{
     margin-bottom: 50px;
 }
 
-.section-headers .title {
+.section-header .title {
     font-size: 35px;
     font-weight: 600;
     text-transform: capitalize;
@@ -558,6 +586,7 @@ section{
 
 .testimonials-slide {
     display: flex;
+    width: max-content;
     animation: scroll 20s linear infinite; 
 }
 
@@ -565,8 +594,10 @@ section{
     background-color: var(--light-bg);
     padding: 30px;
     border-radius: 30px;
-    margin-right: 20px; 
-    min-width: 400px; 
+    margin-right: 20px;
+    /* Fixed card width; the track itself is width: max-content */
+    flex: 0 0 400px;
+    min-width: 400px;
 }
 
 .testimonials-item .info {
@@ -627,6 +658,7 @@ section{
 .container h2{
     color: #000;
     font-size: 32px;
+    font-weight: 700;
     padding: 50px 0;
     text-align: center;
 }
@@ -673,8 +705,10 @@ section{
     font-weight: bold;
     margin-right: 8px;
 }
-.price-col button{
+.price-col .get-started{
+    display: block;
     width: 100%;
+    text-align: center;
     padding: 14px 0;
     background: #4070f4;
     color: #fff; 
@@ -697,9 +731,17 @@ section{
     color: #fff; 
 }
 
-.price-col:hover button {
-    background: #fff; 
-    color: #4070f4; 
+.price-col:hover .get-started {
+    background: #fff;
+    color: #4070f4;
+}
+
+.back-home{
+    display: inline-block;
+    margin: 2rem 0 0 2rem;
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: #4070f4;
 }
 
 /* FAQ Section */
@@ -707,6 +749,7 @@ section{
 .title{
     text-align: center;
     font-size: 3em;
+    font-weight: 700;
     margin: 1em;
 }
 .faq-section{
@@ -751,17 +794,17 @@ section{
 }
 .a  {
     font-size: 1.3rem;
-    overflow: hidden;
-    height: 0;
-    padding: 0 1em 0 3.3em;
+    padding: 1em 1em 2em 3.3em;
     color: #000;
     font-weight: 500;
 }
-.a-opened {
-    padding: 1em 1em 2em 3.3em;
-    height: initial;
+.faq summary{
+    list-style: none;
 }
-.arrows-rotated{
+.faq summary::-webkit-details-marker{
+    display: none;
+}
+.faq details[open] .arrows{
     transform: rotate(90deg);
 }
 
@@ -932,6 +975,8 @@ footer .footer .containerr a:hover {
     border-radius: 50%;
     background: #5350C4;
     transition: all 0.2s ease;
+    /* Above the hero slider controls (z-index 20), below the header and chat popup (100) */
+    z-index: 99;
     
 }
 
@@ -964,6 +1009,7 @@ body.show-chatbot #chatbot-toggler span:last-child {
     transform: scale(0.2);
     transform-origin: bottom right;
     pointer-events: none;
+    visibility: hidden;
     box-shadow: 0 0 128px 0 rgba(0, 0, 0, 0.1),
     0 32px 64px -48px rgba(0, 0, 0, 0.5);
     transition: all 0.1s ease;
@@ -971,6 +1017,7 @@ body.show-chatbot #chatbot-toggler span:last-child {
 }
 
 body.show-chatbot .chatbot-popup {
+    visibility: visible;
     opacity: 1;
     pointer-events: auto;
     transform: scale(1);
@@ -1062,6 +1109,7 @@ body.show-chatbot .chatbot-popup {
     padding: 12px 16px;
     max-width: 75%;
     font-size: 1.3rem;
+    text-transform: none;
 }
 
 .chat-body .bot-message.thinking .message-text{
@@ -1154,7 +1202,7 @@ body.show-chatbot .chatbot-popup {
     border-radius: inherit;
     scrollbar-width: thin;
     scrollbar-color: transparent transparent;
-    text-transform: lowercase;
+    text-transform: none;
     margin-bottom: 5px;
 }
 
@@ -1229,9 +1277,21 @@ body.show-chatbot .chatbot-popup {
 .chat-form .file-upload-wrapper.file-uploaded  #file-upload {
     display: none;
 }
-.chat-form .file-upload-wrapper.file-uploaded img,
-.chat-form .file-upload-wrapper.file-uploaded:hover #file-cancel{
+.chat-form .file-upload-wrapper.file-uploaded img{
     display: block;
+}
+/* A small badge on the thumbnail, always visible, so touch and keyboard users can remove the image too */
+.chat-form .file-upload-wrapper.file-uploaded #file-cancel{
+    display: block;
+    top: -6px;
+    right: -6px;
+    width: 18px;
+    height: 18px;
+    padding: 0;
+    font-size: 1.4rem;
+    line-height: 18px;
+    z-index: 1;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
 }
 
 em-emoji-picker {
@@ -1268,10 +1328,6 @@ body.show-emoji-picker em-emoji-picker {
         font-size: 1.3rem; 
     }
 
-    .header .nav-links-container #btnLogin-popup {
-        font-size: 1.3rem; 
-        width: 110px; 
-    }
     .header.active .logo{
         font-size: 1.6rem;
         margin-top: 5px;
@@ -1300,10 +1356,6 @@ body.show-emoji-picker em-emoji-picker {
     .containers {
         padding: 20px 0; 
         margin: 0; 
-    }
-
-    .heading-testimonial {
-        margin: 20px; 
     }
 
     .contact {
@@ -1350,14 +1402,11 @@ body.show-emoji-picker em-emoji-picker {
         margin-right: auto; 
         color: var(--white); 
     }
-    .logo span {
-        font-size: 1em; 
-    }
-    .slider-wrapper .slider-item .slide-content,
-    .slider-conntrols .slider-pagination{
+    .slider-wraper .slider-item .slide-content,
+    .slider-controls .slider-pagination{
         width: 100%;
     }
-    .slider-wrapper .slider-item .slide-content > * {
+    .slider-wraper .slider-item .slide-content > * {
         max-width: 66%;
     }
     .slider-navigations button{
@@ -1367,10 +1416,6 @@ body.show-emoji-picker em-emoji-picker {
     }
     .slider-navigations button:hover{
         background: none;
-    }
-    .slider-wrapper .slider-item .slide-content,
-    .slider-controls .slider-pagination {
-        width: 100%;
     }
     .about .box-container {
         grid-template-columns: 1fr; 
@@ -1398,9 +1443,14 @@ body.show-emoji-picker em-emoji-picker {
         justify-content: space-between; 
     }
 
+    /* The nav panel below is position:fixed, so its container takes no room; margin-left:auto puts the hamburger at the right edge */
     .header .menu {
-        margin-left: 450px; 
+        margin-left: auto;
         display: block;
+    }
+    .header .nav-links-container {
+        flex-grow: 0;
+        padding: 0;
     }
 
     .header img {
@@ -1418,11 +1468,17 @@ body.show-emoji-picker em-emoji-picker {
       flex-flow: column;
       text-align: center;
       transform: translateX(100%);
+      visibility: hidden;
       padding: 10px 0;
+      /* Scroll inside the panel on short screens; contain it so the page doesn't scroll and close the menu */
+      max-height: calc(100dvh - 1rem);
+      overflow-y: auto;
+      overscroll-behavior: contain;
     }
   
     header .nav-links.show {
       transform: translateX(0);
+      visibility: visible;
     }
     .header .nav-links a {
       color: var(--black);
@@ -1433,12 +1489,18 @@ body.show-emoji-picker em-emoji-picker {
       align-items: center;
     }
 
-   .nav-links > .nav-link-item > .dropdown-menu {
-    width: 65px;
-    top: 35%;
-    left: 180px;
-    margin-top: 12px;
-    text-align: center;
+   /* In the mobile panel, show the Pricing and FAQ links inline instead of on hover.
+      The hover/focus selectors are listed too so a sticky touch hover can't show them while the panel is closed. */
+   .nav-links > .nav-link-item > .dropdown-menu,
+   .nav-links > .nav-link-item:hover > .dropdown-menu,
+   .nav-links > .nav-link-item:focus-within > .dropdown-menu {
+    position: static;
+    width: auto;
+    visibility: inherit;
+    opacity: 1;
+    transform: none;
+    box-shadow: none;
+    background: none;
     }
     .nav-links > .nav-link-item > .dropdown-menu > .dropdown-menu-item > a{
     font-size: 1.6rem;
@@ -1448,10 +1510,6 @@ body.show-emoji-picker em-emoji-picker {
     justify-content: center;
     align-items: center;
 }
-    .header .nav-links-container #btnLogin-popup{
-      width: 30%;
-      left: 220px;
-    }
     .slider-wraper .slider-item .slide-content {
         flex-direction: column;
         padding: 0 20px;
@@ -1472,7 +1530,6 @@ body.show-emoji-picker em-emoji-picker {
     .heading{
         font-size: 2.5rem;
     }
-    .heading-testimonial,
     .heading-contact{
         font-size: 2.5rem;
         margin-top: 15rem;
@@ -1481,23 +1538,7 @@ body.show-emoji-picker em-emoji-picker {
     footer .footer .containerr{
         flex-direction: column;
     }
-    .slide p {
-        margin-bottom: 15px;
-        padding: 0 20px;
-        font-size: 13px;
-      }
-     
-      .slider-wrapper .slider-item .slide-content > *{
-        max-width: 100%;
-    }
-    .swiper-pagination{
-        margin-bottom: 30px;
-    }
-    .nav-btn::after,
-    .nav-btn::before {
-      display: none;
-    } 
-    .slider-wrapper .slider-item .slide-content > * {
+      .slider-wraper .slider-item .slide-content > *{
         max-width: 100%;
     }
    
@@ -1509,46 +1550,17 @@ body.show-emoji-picker em-emoji-picker {
         font-size: 55%;
       }
     .header .menu{
-        margin-left: 200px;
         font-size: 2.5rem;
         margin-top: 30px;
-        margin-left: 250px;
       }
     .header img {
         width: 100px; 
         height: auto; 
         margin-top: 30px;
     }
-    .header .nav-links-container #btnLogin-popup{
-        width: 120px; 
-        font-size: 1.2rem;
-        left: 90px;
-    }
     .containers {
         padding: 10px 0; 
         margin-top: 10px;
-    }
-
-    .testimonial {
-        padding: 10px 0; 
-        margin-top: 1rem;
-    }
-
-    .heading-testimonial {
-        font-size: 2.5rem; 
-       margin-top: 1rem; 
-    }
-
-    .slide p {
-        padding: 0 20px; 
-        font-size: 12px; 
-    }
-    .details{
-        margin-bottom: 3rem;
-        
-    }
-    .swiper-pagination{
-        margin-bottom: -1.3rem;
     }
 
     .contact {
@@ -1601,9 +1613,6 @@ body.show-emoji-picker em-emoji-picker {
     }
     .chat-footer {
         padding: 10px 15px 15px;
-    }
-    .chat-form .file-upload-wrapper.file-uploaded #file-cancel {
-        opacity: 0;
     }
 
   }

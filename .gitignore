@@ -1,0 +1,7 @@
+# Local Worker secrets and state: never commit these
+.dev.vars
+.wrangler/
+node_modules/
+
+# gstack scratch output (keep .gstack/pregate.json tracked)
+.gstack/tmp/

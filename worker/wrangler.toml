@@ -1,0 +1,34 @@
+name = "tds-chat"
+main = "chat-proxy.js"
+compatibility_date = "2026-10-01"
+
+[vars]
+# Comma-separated list of sites allowed to call the proxy
+ALLOWED_ORIGINS = "https://amineyousfii.github.io"
+# Confirm this model ID in Google AI Studio before deploying
+GEMINI_MODEL = "gemini-3.6-flash"
+
+# Both limits are required: the Worker refuses to run without them.
+# Approximate, per Cloudflare location; the period must be 10 or 60 seconds.
+
+# Per visitor (IPv6 visitors per /64): 20 chat messages per minute
+[[ratelimits]]
+name = "RATE_LIMITER"
+namespace_id = "4101"
+
+  [ratelimits.simple]
+  limit = 20
+  period = 60
+
+# Whole site: 200 chat messages per minute
+[[ratelimits]]
+name = "GLOBAL_RATE_LIMITER"
+namespace_id = "4102"
+
+  [ratelimits.simple]
+  limit = 200
+  period = 60
+
+# Keep console.warn/error output in Workers Logs (otherwise it only shows during wrangler tail)
+[observability]
+enabled = true

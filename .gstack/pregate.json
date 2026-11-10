@@ -1,0 +1,15 @@
+{
+  "$schema": "https://github.com/garrytan/gstack/docs/pregate.md#pregate-v1",
+  "runner": "node --test {files}",
+  "dependencies": {
+    "worker/chat-proxy.js": ["worker/chat-proxy.test.mjs"],
+    "worker/wrangler.toml": ["worker/chat-proxy.test.mjs"],
+    "app.js": [],
+    "index.html": [],
+    "FAQ.html": [],
+    "pricing.html": [],
+    "style.css": [],
+    "main.css": [],
+    "script.js": []
+  }
+}
