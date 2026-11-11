@@ -24,7 +24,10 @@ html{
     font-size: 62.5%;
     overflow-x: hidden;
     scroll-behavior: smooth;
-    scroll-padding-top: 6rem;
+    /* Must exceed the fixed header's height (up to 163px here) so nav links
+       don't scroll section headings underneath it. px, not rem, because the
+       root font size changes at 991px and 550px. */
+    scroll-padding-top: 180px;
     line-height: 1.5;
 }
 
@@ -1439,6 +1442,10 @@ body.show-emoji-picker em-emoji-picker {
   }
   
   @media (max-width: 768px) {
+    html {
+        scroll-padding-top: 120px; /* header is up to 103px here */
+    }
+
     .header {
         justify-content: space-between; 
     }
@@ -1548,6 +1555,7 @@ body.show-emoji-picker em-emoji-picker {
   @media (max-width: 550px) {
     html {
         font-size: 55%;
+        scroll-padding-top: 160px; /* header is up to 142px here */
       }
     .header .menu{
         font-size: 2.5rem;
